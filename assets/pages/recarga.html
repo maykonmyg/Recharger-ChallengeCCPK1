@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./recarga.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="box-main">
+        <h1 class="title">Recarga <span>GoodWe</span></h1>
+        <form method="get" action="">
+          <div>
+          <div class="set-box">
+            <label for="charger">Tipo de carregamento</label>
+            <div class="input-box">
+              <select name="charger" id="charger">
+                <option value="low">Lento(7kW)</option>
+                <option value="speed">Rápido(50kW)</option>
+                <option value="ultra">Ultra(150kW)</option>
+              </select>
+            </div>
+          </div>
+          </div>
+          <div>
+          <div class="set-box">
+            <label for="porcentage">Carregar até que porcentagem</label>
+            <div class="input-box">
+              <input
+                type="range"
+                oninput="this.nextElementSibling.value = this.value"
+                min="0"
+                max="100"
+                name="porcentage"
+                id="porcentage"
+              />
+              <output>50</output>
+            </div>
+          </div>
+          </div>
+          <div class="set-box">
+            <label for="currentBattery">Nível atual da bateria (%)</label>
+            <div class="input-box">
+              <input
+                type="range"
+                id="currentBattery"
+                min="0"
+                max="99"
+                value="20"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output>24</output>
+            </div>
+          </div>
+
+          <div id="result-display" style="margin-top: 20px"></div>
+          <div class="set-box">
+            <label for="typeclient">Tipo de Cliente</label>
+            <div class="input-box">
+              <select name="typeclient" id="typeclient">
+                <option value="basic">Básico</option>
+                <option value="premium">Assinante</option>
+              </select>
+            </div>
+          </div>
+          <div class="button-box">
+            <button type="submit">Carregar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
